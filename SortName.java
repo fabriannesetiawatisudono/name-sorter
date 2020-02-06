@@ -58,7 +58,7 @@ public class SortName {
 			Scanner scanner = new Scanner(new File(path + SEPARATOR + args));
 			while (scanner.hasNextLine()) 
 			{
-          nameList.add(scanner.nextLine());
+         			nameList.add(scanner.nextLine());
 			}
 			scanner.close();
 		} 
@@ -69,25 +69,26 @@ public class SortName {
 		return nameList;
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) 
+	{
 		ArrayList<String> unsorted-names;
 		ArrayList<String> sorted-names;
 		SortName obj = new SortName();
 		unsorted-names = obj.readFile(args[0]);
 		sorted-names = obj.sortLastName(unsorted-names);
 
-		try 
-    {
+	    try 
+	    {
 			SortName.writeFile(sorted-names);
-		} 
-    catch (IOException e) 
-    {
+	    }
+	    
+	    catch (IOException e) 
+	    {
 			e.printStackTrace();
-		}
-
-		for (int a = 0; a < sorted-names.size(); a++) 
-    {
+	    }
+	    for (int a = 0; a < sorted-names.size(); a++) 
+	    {
 			System.out.println(sorted-names.get(a));
-		}
+	    }
 	}
 }
